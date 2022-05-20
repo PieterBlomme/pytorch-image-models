@@ -352,6 +352,8 @@ def main():
         results = validate(args)
     # output results in JSON to stdout w/ delimiter for runner script
     print(f'--result\n{json.dumps(results, indent=4)}')
+    with open(results_file, mode='w') as outfile:
+        json.dump(results, outfile)
 
 
 def write_results(results_file, results):
